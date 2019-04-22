@@ -44,6 +44,7 @@ public class EchoServer {
      * @throws InterruptedException
      */
     public void start() throws InterruptedException {
+        //解决jdk 11下unsafe类缺失问题也可以在启动时加参数 -Dio.netty.noUnsafe=true
         //System.setProperty("io.netty.noUnsafe", "true");
         final EchoServerHandler serverHandler = new EchoServerHandler();
         EventLoopGroup group = new NioEventLoopGroup();
